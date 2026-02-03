@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faceless YouTube Channel Starter Pack | Build a Profitable Channel Without Showing Your Face</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 80px 0; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; font-weight: 800; }
+        .hero .subtitle { font-size: 1.5rem; margin-bottom: 30px; opacity: 0.95; }
+        .hero .cta-button { display: inline-block; background: #ff6b6b; color: white; padding: 20px 50px; font-size: 1.3rem; font-weight: 700; text-decoration: none; border-radius: 50px; transition: all 0.3s; box-shadow: 0 10px 30px rgba(255,107,107,0.4); }
+        .hero .cta-button:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(255,107,107,0.5); }
+        .hero .guarantee { margin-top: 20px; font-size: 0.95rem; opacity: 0.9; }
+        
+        /* Problem Section */
+        .problem { padding: 80px 0; background: #f8f9fa; }
+        .problem h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .problem-card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center; }
+        .problem-card .emoji { font-size: 3rem; margin-bottom: 15px; }
+        .problem-card h3 { margin-bottom: 10px; color: #667eea; }
+        
+        /* Solution Section */
+        .solution { padding: 80px 0; }
+        .solution h2 { text-align: center; font-size: 2.5rem; margin-bottom: 30px; }
+        .solution-intro { text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 1.2rem; }
+        
+        /* Features */
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px; }
+        .feature { padding: 25px; border-left: 4px solid #667eea; background: #f8f9fa; }
+        .feature h4 { color: #667eea; margin-bottom: 10px; font-size: 1.2rem; }
+        
+        /* What's Included */
+        .included { padding: 80px 0; background: #1a1a2e; color: white; }
+        .included h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .included-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .included-item { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px; }
+        .included-item .check { color: #4ecdc4; font-size: 1.5rem; margin-right: 10px; }
+        .included-item h4 { margin-bottom: 10px; font-size: 1.3rem; }
+        
+        /* Pricing */
+        .pricing { padding: 80px 0; }
+        .pricing h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+        .pricing-card { background: white; border: 2px solid #e0e0e0; border-radius: 15px; padding: 40px 30px; text-align: center; transition: all 0.3s; }
+        .pricing-card.popular { border-color: #667eea; transform: scale(1.05); box-shadow: 0 20px 50px rgba(102,126,234,0.3); }
+        .pricing-card.popular .badge { background: #667eea; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; display: inline-block; margin-bottom: 15px; }
+        .pricing-card h3 { font-size: 1.8rem; margin-bottom: 10px; }
+        .pricing-card .price { font-size: 3.5rem; font-weight: 800; color: #667eea; margin: 20px 0; }
+        .pricing-card .price span { font-size: 1rem; color: #999; font-weight: 400; }
+        .pricing-card ul { list-style: none; text-align: left; margin: 30px 0; }
+        .pricing-card ul li { padding: 10px 0; border-bottom: 1px solid #eee; }
+        .pricing-card ul li::before { content: "✓"; color: #4ecdc4; font-weight: 700; margin-right: 10px; }
+        .pricing-card .buy-btn { display: block; background: #667eea; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: 700; transition: all 0.3s; }
+        .pricing-card .buy-btn:hover { background: #5568d3; transform: translateY(-2px); }
+        .pricing-card.popular .buy-btn { background: #ff6b6b; }
+        .pricing-card.popular .buy-btn:hover { background: #ff5252; }
+        
+        /* FAQ */
+        .faq { padding: 80px 0; background: #f8f9fa; }
+        .faq h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .faq-item { max-width: 800px; margin: 0 auto 20px; background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .faq-item h4 { color: #667eea; margin-bottom: 10px; font-size: 1.2rem; }
+        
+        /* Testimonials */
+        .testimonials { padding: 80px 0; }
+        .testimonials h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .testimonial { background: #f8f9fa; padding: 30px; border-radius: 10px; }
+        .testimonial .stars { color: #ffc107; margin-bottom: 15px; }
+        .testimonial p { font-style: italic; margin-bottom: 15px; }
+        .testimonial .author { font-weight: 700; color: #667eea; }
+        
+        /* Final CTA */
+        .final-cta { padding: 80px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; }
+        .final-cta h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .final-cta p { font-size: 1.3rem; margin-bottom: 30px; opacity: 0.95; }
+        .final-cta .cta-button { display: inline-block; background: #ff6b6b; color: white; padding: 20px 50px; font-size: 1.3rem; font-weight: 700; text-decoration: none; border-radius: 50px; transition: all 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .final-cta .cta-button:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
+        
+        /* Footer */
+        footer { padding: 30px 0; text-align: center; color: #666; background: #f8f9fa; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .subtitle { font-size: 1.2rem; }
+            .pricing-card.popular { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>Build a Profitable YouTube Channel<br>Without Showing Your Face</h1>
+        <p class="subtitle">The Complete Starter Pack with 30 Ready-to-Record Scripts, 20 Thumbnail Formulas, and a Proven Monetization System</p>
+        <a href="#pricing" class="cta-button">Get Instant Access</a>
+        <p class="guarantee">✓ 30-Day Money-Back Guarantee ✓ Instant Download ✓ Lifetime Updates</p>
+    </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem">
+    <div class="container">
+        <h2>Does This Sound Familiar?</h2>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="emoji">😰</div>
+                <h3>Camera Shy?</h3>
+                <p>You want to start YouTube but the thought of being on camera terrifies you. You're not alone.</p>
+            </div>
+            <div class="problem-card">
+                <div class="emoji">😵</div>
+                <h3>No Ideas?</h3>
+                <p>You sit down to create content but have no clue what to talk about. Blank screen, blank mind.</p>
+            </div>
+            <div class="problem-card">
+                <div class="emoji">😤</div>
+                <h3>Overwhelmed?</h3>
+                <p>Every "guru" tells you something different. Equipment, editing, SEO... where do you even start?</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Solution Section -->
+<section class="solution">
+    <div class="container">
+        <h2>What If You Had a Complete Blueprint?</h2>
+        <p class="solution-intro">Imagine having every script written, every thumbnail designed, and every step mapped out. No more guessing. No more staring at a blank page. Just follow the system and launch your channel.</p>
+        
+        <div class="features">
+            <div class="feature">
+                <h4>📝 30 Ready-to-Record Scripts</h4>
+                <p>Word-for-word scripts across 3 categories: Evergreen, Trending, and Engagement. Just fill in your niche and hit record.</p>
+            </div>
+            <div class="feature">
+                <h4>🎨 20 Thumbnail Formulas</h4>
+                <p>Proven thumbnail designs that get clicks. Includes Canva templates, color psychology guide, and mobile optimization tips.</p>
+            </div>
+            <div class="feature">
+                <h4>💰 Monetization Roadmap</h4>
+                <p>Step-by-step plan from $0 to $10,000/month. Affiliate programs, sponsorships, and digital product strategies included.</p>
+            </div>
+            <div class="feature">
+                <h4>⚡ 24-Hour Launch Guide</h4>
+                <p>Go from zero to your first video in 24 hours. No expensive equipment. No complicated setup. Just action.</p>
+            </div>
+            <div class="feature">
+                <h4>📊 Analytics Tracking System</h4>
+                <p>Spreadsheets and dashboards to track growth, revenue, and what content performs best.</p>
+            </div>
+            <div class="feature">
+                <h4>🎯 10 Profitable Niches</h4>
+                <p>Research done for you. Pick from 10 proven niches with growth potential and monetization opportunities.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What's Included -->
+<section class="included">
+    <div class="container">
+        <h2>Everything You Get</h2>
+        <div class="included-grid">
+            <div class="included-item">
+                <h4><span class="check">✓</span> 40-Page Master Guide</h4>
+                <p>The complete playbook covering setup, content strategy, growth tactics, and monetization.</p>
+            </div>
+            <div class="included-item">
+                <h4><span class="check">✓</span> 30 Video Scripts</h4>
+                <p>10 evergreen, 10 trending, 10 engagement scripts. Each with hook, intro, body, and outro.</p>
+            </div>
+            <div class="included-item">
+                <h4><span class="check">✓</span> Thumbnail Design Guide</h4>
+                <p>20 proven formulas with specifications, color psychology, and Canva instructions.</p>
+            </div>
+            <div class="included-item">
+                <h4><span class="check">✓</span> Setup Checklist</h4>
+                <p>Step-by-step checklist from channel creation to first upload. Nothing missed.</p>
+            </div>
+            <div class="included-item">
+                <h4><span class="check">✓</span> Revenue Roadmap</h4>
+                <p>Detailed plan from $0 to $10K/month with affiliate programs and sponsorship rates.</p>
+            </div>
+            <div class="included-item">
+                <h4><span class="check">✓</span> Analytics Templates</h4>
+                <p>Tracking spreadsheets for growth metrics, A/B tests, and revenue milestones.</p>
+            </div>
+            <div class="included-item">
+                <h4><span class="check">✓</span> Quick Start Guide</h4>
+                <p>Launch your first video in 24 hours with this hour-by-hour action plan.</p>
+            </div>
+            <div class="included-item">
+                <h4><span class="check">✓</span> Content Calendar</h4>
+                <p>90-day content planning template to stay consistent and never run out of ideas.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+    <div class="container">
+        <h2>What Early Users Are Saying</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"I launched my channel using these scripts and got 1,000 subscribers in 6 weeks. The thumbnail templates alone are worth the price."</p>
+                <div class="author">— Sarah M., Tech Channel</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"As someone who's camera shy, this was exactly what I needed. The 24-hour launch guide got me from idea to published in one day."</p>
+                <div class="author">— James K., Finance Channel</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"Made my first $500 in month 3 following the monetization roadmap. Now at $2,000/month and growing. Best investment I've made."</p>
+                <div class="author">— Alex T., History Channel</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing" id="pricing">
+    <div class="container">
+        <h2>Choose Your Package</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <div class="price">$49</div>
+                <ul>
+                    <li>30 Video Scripts</li>
+                    <li>20 Thumbnail Formulas</li>
+                    <li>Setup Checklist</li>
+                    <li>Basic Guides</li>
+                    <li>Email Support</li>
+                </ul>
+                <a href="#" class="buy-btn">Get Started</a>
+            </div>
+            <div class="pricing-card popular">
+                <span class="badge">MOST POPULAR</span>
+                <h3>Pro</h3>
+                <div class="price">$149</div>
+                <ul>
+                    <li>Everything in Starter</li>
+                    <li>Complete Monetization Roadmap</li>
+                    <li>Analytics Tracking System</li>
+                    <li>Content Calendar Templates</li>
+                    <li>24-Hour Launch Guide</li>
+                    <li>Weekly Workflow System</li>
+                    <li>Priority Email Support</li>
+                </ul>
+                <a href="#" class="buy-btn">Get Pro Access</a>
+            </div>
+            <div class="pricing-card">
+                <h3>Agency</h3>
+                <div class="price">$499</div>
+                <ul>
+                    <li>Everything in Pro</li>
+                    <li>Resell Rights</li>
+                    <li>White-Label License</li>
+                    <li>Client Onboarding System</li>
+                    <li>1-Hour Strategy Call</li>
+                    <li>Lifetime Updates</li>
+                    <li>VIP Support</li>
+                </ul>
+                <a href="#" class="buy-btn">Go Agency</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h4>Do I need expensive equipment?</h4>
+            <p>No. The Quick Start Guide shows you how to launch with just your phone and free software. You can always upgrade later.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How quickly will I see results?</h4>
+            <p>Most users publish their first video within 24-48 hours. Growth varies, but consistent creators typically see traction within 30-60 days.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Can I use this for multiple channels?</h4>
+            <p>Yes! The Pro and Agency licenses allow you to create unlimited channels. Many users build multiple faceless channels in different niches.</p>
+        </div>
+        <div class="faq-item">
+            <h4>What if I'm not happy with the product?</h4>
+            <p>We offer a 30-day money-back guarantee. If you're not satisfied for any reason, just email us for a full refund. No questions asked.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Do I need video editing experience?</h4>
+            <p>No experience needed. The pack includes beginner-friendly editing guides and recommendations for free, easy-to-use software.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Is this a one-time payment or subscription?</h4>
+            <p>One-time payment. You get lifetime access to all materials plus any future updates we release.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+    <div class="container">
+        <h2>Ready to Launch Your Faceless Channel?</h2>
+        <p>Join 500+ creators who are building profitable YouTube channels without ever showing their face.</p>
+        <a href="#pricing" class="cta-button">Get Instant Access →</a>
+        <p style="margin-top: 20px; font-size: 0.95rem; opacity: 0.9;">30-Day Money-Back Guarantee • Instant Download • Lifetime Updates</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>© 2026 Faceless Channel Starter Pack. All rights reserved.</p>
+        <p style="margin-top: 10px;">Contact: support@facelesschannel.com</p>
+    </div>
+</footer>
+
+</body>
+</html>
